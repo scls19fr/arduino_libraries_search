@@ -5,6 +5,7 @@ This is a script to search into Arduino library.
 ## Install
 
 This is just a work in progress.
+
 No `setup.py` as it's just a script and 
 you're supposed to know how to use it by watching code.
 
@@ -35,6 +36,6 @@ Options:
 ```
 
 ## Alternatives
-https://www.arduino.cc/en/Reference/Libraries
-https://www.arduinolibraries.info/
-https://platformio.org/lib
+- https://www.arduino.cc/en/Reference/Libraries
+- https://www.arduinolibraries.info/
+- https://platformio.org/lib
