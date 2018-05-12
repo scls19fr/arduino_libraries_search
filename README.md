@@ -1,5 +1,7 @@
 # arduino_libraries_search
 
+This is a script to search into Arduino library.
+
 ## Install
 
 This is just a work in progress.
@@ -31,3 +33,8 @@ Options:
   --write-excel / --no-write-excel
   --help                          Show this message and exit.
 ```
+
+## Alternatives
+https://www.arduino.cc/en/Reference/Libraries
+https://www.arduinolibraries.info/
+https://platformio.org/lib
