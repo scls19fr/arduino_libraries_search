@@ -2,8 +2,8 @@ import click
 import datetime
 from requests_cache import CachedSession
 import pandas as pd
-from pandas.io.json import json_normalize
 # import semver
+from utils import download_index
 
 
 @click.command()
@@ -16,17 +16,7 @@ def main(max_rows, cache, search, write_excel):
     expire_after = datetime.timedelta(days=cache)
     session = CachedSession(cache_name='cache', backend='sqlite',
                             expire_after=expire_after)
-    url = "http://downloads.arduino.cc/libraries/library_index.json"
-    r = session.get(url)
-    d = r.json()
-    libraries = d['libraries']
-    df = json_normalize(libraries)
-    # df['version'] = df['version'].map(semver.parse_version_info)
-    # raises TypeError: unhashable type: 'VersionInfo'
-    # see https://github.com/k-bx/python-semver/issues/73
-    df = df.sort_values(by=['name', 'version'], ascending=[True, True])
-    # df_first = df.groupby('name').first()
-    df_last = df.groupby('name').last()
+    df, df_last = download_index(session)
     if search != '':
         ser_have_keyword = \
             df_last['paragraph'].str.contains(search,
