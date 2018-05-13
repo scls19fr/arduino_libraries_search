@@ -44,8 +44,8 @@ def main(max_rows, cache, name):
         with ZipFile(tmpf, 'r') as zf:
             license_filenames = []
             for filename in zf.namelist():
-                filename = filename.upper()
-                if 'LICENSE' in filename or 'LICENCE' in filename:
+                filename_upper = filename.upper()
+                if 'LICENSE' in filename_upper or 'LICENCE' in filename_upper:
                     license_filenames.append(filename)
             assert len(license_filenames) == 1, \
                 "Several license files have been found"
@@ -53,8 +53,8 @@ def main(max_rows, cache, name):
 
             print()
             print(license_filename)
-            # data = zf.open(license_filename).read().decode()
-            # print(data)
+            data = zf.open(license_filename).read().decode()
+            print(data)
 
 
 if __name__ == '__main__':
