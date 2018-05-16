@@ -1,7 +1,6 @@
 import click
 import datetime
 import pandas as pd
-# import semver
 from utils import MAX_ROWS_DEFAULT, EXPIRE_AFTER_DEFAULT, SEARCH_IN_DEFAULT, init_session, download_index, add_possible_repository_url, search
 
 

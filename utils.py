@@ -5,6 +5,7 @@ from requests_cache import CachedSession
 import datetime
 import tempfile
 from zipfile import ZipFile
+import semver
 
 
 EXPIRE_AFTER_DEFAULT = datetime.timedelta(days=7)
@@ -34,7 +35,7 @@ def download_index(session=None, ascending=False):
     d = r.json()
     libraries = d['libraries']
     df = json_normalize(libraries)
-    # df['version'] = df['version'].map(semver.parse_version_info)
+    df['version'] = df['version'].map(semver.parse_version_info)
     # raises TypeError: unhashable type: 'VersionInfo'
     # see https://github.com/k-bx/python-semver/issues/73
     df = df.sort_values(by=['name', 'version'], ascending=[True, ascending])
@@ -223,4 +224,4 @@ def search(keywords, columns_search=None, session=None, df_last=None):
     print(df_search.set_index('name'))
     print()
     print("Found %d libraries" % n_found)
-    # return df_search
+    return df_search

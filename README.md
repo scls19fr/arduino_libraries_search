@@ -15,6 +15,7 @@ you're supposed to know how to use it by watching code.
 - click http://click.pocoo.org/
 - requests_cache https://github.com/reclosedev/requests-cache
 - openpyxl https://openpyxl.readthedocs.io/
+- python-semver>=2.8.0 https://github.com/k-bx/python-semver for https://semver.org/
 
 ### Install latest development version
 ```bash

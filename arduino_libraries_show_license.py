@@ -2,7 +2,6 @@ import click
 import sys
 import datetime
 import pandas as pd
-# import semver
 from utils import MAX_ROWS_DEFAULT, EXPIRE_AFTER_DEFAULT, THRESHOLD_DEFAULT, \
     init_session, download_index, \
     get_versions, get_latest_version, get_archive_url, \
@@ -49,14 +48,14 @@ def main(max_rows, cache, name, version, threshold):
     print("")
 
     versions = get_versions(name, df)
-    print("versions: %s" % versions.values)
+    print("versions: %s" % versions.map(str).values)
 
     if version == 'latest':
         version = get_latest_version(name, df)
 
     print()
 
-    print("version: %s" % version)
+    print("version: %s" % str(version))
 
     url = get_archive_url(name, version, df)
 
