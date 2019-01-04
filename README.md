@@ -28,11 +28,11 @@ $ cd arduino_libraries_search
 See
 
 ```bash
-$ python arduino_search.py --help
+$ python arduino_libraries_search.py --help
 ```
 
 ```bash
-arduino_libraries_show_license.py --help
+$ python arduino_libraries_show_license.py --help
 ```
 
 ### Interactive usage
