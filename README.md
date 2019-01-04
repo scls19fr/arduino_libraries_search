@@ -173,4 +173,5 @@ Reading "Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPytho
 ## Alternatives
 - https://www.arduino.cc/en/Reference/Libraries
 - https://www.arduinolibraries.info/
+- https://github.com/arduino/arduino-cli
 - https://platformio.org/lib
